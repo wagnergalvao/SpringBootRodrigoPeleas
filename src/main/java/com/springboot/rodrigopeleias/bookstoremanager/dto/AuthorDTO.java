@@ -1,4 +1,4 @@
-package com.springboot.rodrigopeleas.bookstoremanager.dto;
+package com.springboot.rodrigopeleias.bookstoremanager.dto;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

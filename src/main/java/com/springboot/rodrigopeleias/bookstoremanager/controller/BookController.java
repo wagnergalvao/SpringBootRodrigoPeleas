@@ -1,4 +1,4 @@
-package com.springboot.rodrigopeleas.bookstoremanager.controller;
+package com.springboot.rodrigopeleias.bookstoremanager.controller;
 
 import javax.validation.Valid;
 
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.springboot.rodrigopeleas.bookstoremanager.dto.BookDTO;
-import com.springboot.rodrigopeleas.bookstoremanager.dto.MessageResponseDTO;
-import com.springboot.rodrigopeleas.bookstoremanager.service.BookService;
+import com.springboot.rodrigopeleias.bookstoremanager.dto.BookDTO;
+import com.springboot.rodrigopeleias.bookstoremanager.dto.MessageResponseDTO;
+import com.springboot.rodrigopeleias.bookstoremanager.service.BookService;
 
 @RestController
 @RequestMapping("/api/v1/books")

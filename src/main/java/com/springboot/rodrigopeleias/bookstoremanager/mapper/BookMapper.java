@@ -1,10 +1,10 @@
-package com.springboot.rodrigopeleas.bookstoremanager.mapper;
+package com.springboot.rodrigopeleias.bookstoremanager.mapper;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
-import com.springboot.rodrigopeleas.bookstoremanager.dto.BookDTO;
-import com.springboot.rodrigopeleas.bookstoremanager.entity.Book;
+import com.springboot.rodrigopeleias.bookstoremanager.dto.BookDTO;
+import com.springboot.rodrigopeleias.bookstoremanager.entity.Book;
 
 @Mapper
 public interface BookMapper {

@@ -1,4 +1,4 @@
-package com.springboot.rodrigopeleas.bookstoremanager;
+package com.springboot.rodrigopeleias.bookstoremanager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

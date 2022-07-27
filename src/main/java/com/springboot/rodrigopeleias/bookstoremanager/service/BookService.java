@@ -1,12 +1,12 @@
-package com.springboot.rodrigopeleas.bookstoremanager.service;
+package com.springboot.rodrigopeleias.bookstoremanager.service;
 
 import org.springframework.stereotype.Service;
 
-import com.springboot.rodrigopeleas.bookstoremanager.dto.BookDTO;
-import com.springboot.rodrigopeleas.bookstoremanager.dto.MessageResponseDTO;
-import com.springboot.rodrigopeleas.bookstoremanager.entity.Book;
-import com.springboot.rodrigopeleas.bookstoremanager.mapper.BookMapper;
-import com.springboot.rodrigopeleas.bookstoremanager.repository.BookRepository;
+import com.springboot.rodrigopeleias.bookstoremanager.dto.BookDTO;
+import com.springboot.rodrigopeleias.bookstoremanager.dto.MessageResponseDTO;
+import com.springboot.rodrigopeleias.bookstoremanager.entity.Book;
+import com.springboot.rodrigopeleias.bookstoremanager.mapper.BookMapper;
+import com.springboot.rodrigopeleias.bookstoremanager.repository.BookRepository;
 
 @Service
 public class BookService {

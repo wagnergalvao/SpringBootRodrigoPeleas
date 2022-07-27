@@ -1,4 +1,4 @@
-package com.springboot.rodrigopeleas.bookstoremanager.entity;
+package com.springboot.rodrigopeleias.bookstoremanager.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

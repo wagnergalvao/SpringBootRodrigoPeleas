@@ -1,4 +1,4 @@
-package com.springboot.rodrigopeleas.bookstoremanager.dto;
+package com.springboot.rodrigopeleias.bookstoremanager.dto;
 
 import lombok.Builder;
 import lombok.Data;
