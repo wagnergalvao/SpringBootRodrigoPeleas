@@ -31,7 +31,7 @@ public class BookDTO {
 
   @NotBlank
   @Size(max = 100)
-  @Pattern(regexp = "(?:ISBN(?:-10)?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$)[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$", message = "ISBN format must be a valid format")
+  @Pattern(regexp = "^(?:ISBN(?:-1[03])?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$", message = "ISBN format must be a valid format")
   private String isbn;
 
   @NotBlank
@@ -40,6 +40,5 @@ public class BookDTO {
 
   @Valid
   @NotNull
-  private AuthorDTO authorDTO;
-
+  private AuthorDTO author;
 }
