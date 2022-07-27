@@ -2,6 +2,7 @@ package com.springboot.rodrigopeleas.bookstoremanager.controller;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import com.springboot.rodrigopeleas.bookstoremanager.service.BookService;
 @RequestMapping("/api/v1/books")
 public class BookController {
 
+  @Autowired
   private BookService bookService;
 
   public BookController(BookService bookService) {
