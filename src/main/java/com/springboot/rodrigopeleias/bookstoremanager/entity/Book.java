@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -30,12 +32,18 @@ public class Book {
   private String name;
 
   @Column(nullable = false)
+  @Min(value = 10)
+  @Max(value = 9999)
   private Integer pages;
 
   @Column(nullable = false)
+  @Min(value = 5)
+  @Max(value = 100)
   private Integer chapters;
 
   @Column(nullable = false)
+  @Min(value = 10)
+  @Max(value = 13)
   private String isbn;
 
   @Column(name = "publisher_name", nullable = false, unique = true)
