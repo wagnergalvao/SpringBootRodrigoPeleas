@@ -1,5 +1,7 @@
 package com.springboot.rodrigopeleias.bookstoremanager.service;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import com.springboot.rodrigopeleias.bookstoremanager.dto.BookDTO;
@@ -26,6 +28,11 @@ public class BookService {
     return MessageResponseDTO.builder()
         .message("Book created with ID " + savedBook.getId())
         .build();
+  }
+
+  public BookDTO findById(Long id) {
+    Optional<Book> optionalBook = bookRepository.findById(id);
+    return bookMapper.toDTO(optionalBook.get());
   }
 
 }

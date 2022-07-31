@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -42,8 +43,7 @@ public class Book {
   private Integer chapters;
 
   @Column(nullable = false)
-  @Min(value = 10)
-  @Max(value = 13)
+  @Size(max = 100)
   private String isbn;
 
   @Column(name = "publisher_name", nullable = false, unique = true)
@@ -52,4 +52,5 @@ public class Book {
   @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE })
   @JoinColumn(name = "author_id")
   private Author author;
+
 }

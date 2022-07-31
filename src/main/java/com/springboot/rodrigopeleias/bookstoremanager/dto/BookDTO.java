@@ -36,7 +36,7 @@ public class BookDTO {
   private Integer chapters;
 
   @NotBlank
-  @Size(min = 10, max = 13, message = "isbn: must be between 10 and 13 characters long")
+  @Size(max = 100, message = "isbn: must be between 10 and 13 characters long")
   @Pattern(regexp = "^(?:ISBN(?:-1[03])?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$", message = "ISBN format must be a valid format")
   private String isbn;
 
@@ -47,4 +47,5 @@ public class BookDTO {
   @Valid
   @NotNull
   private AuthorDTO author;
+
 }
