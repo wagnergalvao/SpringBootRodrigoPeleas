@@ -2,6 +2,8 @@ package com.springboot.rodrigopeleias.bookstoremanager.service;
 
 import static com.springboot.rodrigopeleias.bookstoremanager.utils.BookUtils.createFakeBook;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 import java.util.Optional;
@@ -39,6 +41,18 @@ public class BookServiceTest {
     assertEquals(expectedFoundBook.getName(), bookDTO.getName());
     assertEquals(expectedFoundBook.getIsbn(), bookDTO.getIsbn());
     assertEquals(expectedFoundBook.getPublisherName(), bookDTO.getPublisherName());
+
+  }
+
+  @Test
+  void WhenGetIsCalledWithUnexistingIdThenReturnBookNotFoundException() {
+
+    long invalidId = 100L;
+
+    when(bookRepository.findById(invalidId))
+        .thenReturn(Optional.ofNullable(any(Book.class)));
+
+    assertThrows(BookNotFoundException.class, () -> bookService.findById(invalidId));
 
   }
 }
