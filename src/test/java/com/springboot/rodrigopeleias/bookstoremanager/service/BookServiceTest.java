@@ -14,6 +14,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.springboot.rodrigopeleias.bookstoremanager.dto.BookDTO;
 import com.springboot.rodrigopeleias.bookstoremanager.entity.Book;
+import com.springboot.rodrigopeleias.bookstoremanager.exception.BookNotFoundException;
 import com.springboot.rodrigopeleias.bookstoremanager.repository.BookRepository;
 
 @ExtendWith(MockitoExtension.class)
@@ -26,7 +27,7 @@ public class BookServiceTest {
   private BookService bookService;
 
   @Test
-  void WhenGetIsCalledWithExistingIdThenReturnThisBook() {
+  void WhenGetIsCalledWithExistingIdThenReturnThisBook() throws BookNotFoundException {
 
     Book expectedFoundBook = createFakeBook();
 

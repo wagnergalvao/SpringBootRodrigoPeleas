@@ -21,11 +21,11 @@ public class BookDTO {
 
   private Long id;
 
-  @NotBlank
+  @NotBlank(message = "name: required")
   @Size(min = 5, max = 200, message = "name: must be between 5 and 200 characters long")
   private String name;
 
-  @NotNull()
+  @NotNull(message = "pages: positive number value is required")
   @Min(value = 10, message = "pages: positive number, min 10 is required")
   @Max(value = 9999, message = "pages: positive number, max 9999 is required")
   private Integer pages;
@@ -35,16 +35,16 @@ public class BookDTO {
   @Max(value = 100, message = "pages: positive number, max 100 is required")
   private Integer chapters;
 
-  @NotBlank
-  @Size(max = 100, message = "isbn: must be between 10 and 13 characters long")
-  @Pattern(regexp = "^(?:ISBN(?:-1[03])?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$", message = "ISBN format must be a valid format")
+  @NotBlank(message = "isbn: required")
+  @Size(max = 100, message = "isbn: format must be ISBN-10 or ISBN-13 format")
+  @Pattern(regexp = "^(?:ISBN(?:-1[03])?:? )?(?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]$", message = "isbn: format must be ISBN-10 or ISBN-13 format")
   private String isbn;
 
-  @NotBlank
+  @NotBlank(message = "publisherName: required")
   @Size(min = 5, max = 200, message = "publisherName: must be between 5 and 200 characters long")
   private String publisherName;
 
-  @Valid
+  @Valid()
   @NotNull
   private AuthorDTO author;
 

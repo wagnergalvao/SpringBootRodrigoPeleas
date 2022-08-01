@@ -1,12 +1,11 @@
 package com.springboot.rodrigopeleias.bookstoremanager.service;
 
-import java.util.Optional;
-
 import org.springframework.stereotype.Service;
 
 import com.springboot.rodrigopeleias.bookstoremanager.dto.BookDTO;
 import com.springboot.rodrigopeleias.bookstoremanager.dto.MessageResponseDTO;
 import com.springboot.rodrigopeleias.bookstoremanager.entity.Book;
+import com.springboot.rodrigopeleias.bookstoremanager.exception.BookNotFoundException;
 import com.springboot.rodrigopeleias.bookstoremanager.mapper.BookMapper;
 import com.springboot.rodrigopeleias.bookstoremanager.repository.BookRepository;
 
@@ -30,9 +29,11 @@ public class BookService {
         .build();
   }
 
-  public BookDTO findById(Long id) {
-    Optional<Book> optionalBook = bookRepository.findById(id);
-    return bookMapper.toDTO(optionalBook.get());
+  public BookDTO findById(Long id) throws BookNotFoundException {
+    Book book = bookRepository.findById(id)
+        .orElseThrow(() -> new BookNotFoundException(id));
+
+    return bookMapper.toDTO(book);
   }
 
 }
